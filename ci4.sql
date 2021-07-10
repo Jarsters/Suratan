@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jul 2021 pada 08.17
+-- Waktu pembuatan: 09 Jul 2021 pada 17.38
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.6
 
@@ -24,22 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `role`
+-- Struktur dari tabel `disposisi`
 --
 
-CREATE TABLE `role` (
-  `id` int(11) NOT NULL,
-  `role` varchar(30) NOT NULL
+CREATE TABLE `disposisi` (
+  `id` int(1) NOT NULL,
+  `nomor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `role`
+-- Dumping data untuk tabel `disposisi`
 --
 
-INSERT INTO `role` (`id`, `role`) VALUES
-(0, 'user'),
-(1, 'konfirmator'),
-(2, 'administrator');
+INSERT INTO `disposisi` (`id`, `nomor`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -48,10 +46,16 @@ INSERT INTO `role` (`id`, `role`) VALUES
 --
 
 CREATE TABLE `surat` (
-  `no_surat` varchar(20) NOT NULL,
-  `lokasi` varchar(30) NOT NULL,
-  `keterangan` varchar(255) NOT NULL,
-  `tanggal` datetime NOT NULL
+  `id` int(11) NOT NULL,
+  `no_disposisi` int(4) NOT NULL,
+  `no_surat` varchar(35) DEFAULT NULL,
+  `perihal` varchar(50) NOT NULL,
+  `asal_surat` varchar(30) NOT NULL,
+  `keterangan` text NOT NULL,
+  `kepada` varchar(50) NOT NULL,
+  `tanggal_surat` datetime NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `tahun` char(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -62,32 +66,60 @@ CREATE TABLE `surat` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `role` int(11) NOT NULL,
-  `jabatan` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `jabatan` varchar(50) NOT NULL,
+  `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id`, `jabatan`, `password`) VALUES
+(1, 'Tata Usaha', 'alone123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `role`
+-- Indeks untuk tabel `disposisi`
 --
-ALTER TABLE `role`
+ALTER TABLE `disposisi`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `surat`
 --
 ALTER TABLE `surat`
-  ADD PRIMARY KEY (`no_surat`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `disposisi`
+--
+ALTER TABLE `disposisi`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `surat`
+--
+ALTER TABLE `surat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
