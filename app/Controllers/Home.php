@@ -9,12 +9,6 @@ use \App\Models\SuratModel;
 class Home extends BaseController
 {
 
-	protected $encryptor;
-
-    public function __construct(){
-        $this->encryptor = \Config\Services::encrypter();
-    }
-
 	public function index()
 	{
 		// return view('welcome_message');
@@ -97,7 +91,7 @@ class Home extends BaseController
 		// 	"status" => "diterima dengan senang hati",
 		// 	"tahun" => date("Y")
 		// ];
-		
+
 			// ################### UNTUK RESTART DISPOSISI JIKA SUDAH GANTI TAHUN #####################
 				// $tahun = date("Y");
 				// $lanjut_disposisi = $suratModel->where(['tahun' => $tahun])->first();
