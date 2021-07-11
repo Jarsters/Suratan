@@ -8,7 +8,7 @@
     <title>Home</title>
 </head>
 <body style="height:1500px;">
-    <header>
+    <header style="position: fixed; top: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="col-1"></div>
@@ -23,10 +23,15 @@
                         <div class="col text-center">
                             <ul class="nav justify-content-end">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">
-                                        <img src="\img\icon_login2.png" alt="" class="img-fluid">
+                                <div class="fs-4 mt-1">
+                                    <a href="" class="nav-link active" style="color:#0A5384">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                                        </svg>
                                         <h6>Login</h6>
                                     </a>
+                                </div>
                                 </li>
                             </ul>                        
                         </div>
@@ -36,7 +41,7 @@
             </div>
         </nav>
     </header>
-    <div class="row w-100 mt-2" style="margin:auto">
+    <div class="row w-100" style="margin:auto; margin-top: 6.5rem">
         <img src="\img\Kantor_Wali_Kota_Jakarta_Timur.jpg" class="img-fluid" alt="">
     </div>
     <br><br><br>
