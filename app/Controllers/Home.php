@@ -9,15 +9,17 @@ use \App\Models\SuratModel;
 class Home extends BaseController
 {
 
+	public function utama()
+	{
+		return view('home/index');
+	}
+
 	public function index()
 	{
+
+// ############################################################################################################
 		// return view('welcome_message');
 		// echo ("Hello world!");
-
-		// Penggunaan model ####################################################
-		// $roleModel = new RoleModel();
-		// $role = $roleModel->findAll();
-		// dd($role);
 
 		// Explode/split string dengan separatornya apa ####################################################
 		$string = "nama,saya,siapa";
@@ -31,7 +33,9 @@ class Home extends BaseController
 		
 		// Ambil year aja ####################################################
 		// echo(date("Y"));
-		
+
+// ############################################################################################################
+
 		// Enkripsi Dipake di model untuk save user ####################################################
 		// $encrypter = \Config\Services::encrypter();
 		// $cipher= $encrypter->encrypt($string);
@@ -42,23 +46,25 @@ class Home extends BaseController
 		$userModel = new UserModel();
 		// $dataUser = [
 		// 	'jabatan' => "direktur utama",
-		// 	'password' => bin2hex($this->encryptor->encrypt('inipasswordku')),
-		// 	"id_karyawan" => "13136180291313618029"
+		// 	'password' => $userModel->enkrip('inipasswordku2'),
+		// 	"id_karyawan" => "3123123141569"
 		// ];
 		// $userModel->save($dataUser);
+		$user = $userModel->where(["id_karyawan" => "3123123141569"])->first();
 		// $dataUser = [
-		// 	'id' => 1,
+		// 	'id' => $user['id'],
 		// 	'jabatan' => "direktur utama",
-		// 	'password' => bin2hex($this->encryptor->encrypt('inipasswordku')),
-		// 	"id_karyawan" => 1313618251
+		// 	'password' => $user['password'],
+		// 	"id_karyawan" => $user['id_karyawan']
 		// ];
-		d($userModel->findAll());
+		// echo($userModel->dekrip($user['password']));
+		// d($userModel->findAll());
 		// $userModel->save($dataUser);
 		// $user = $userModel->find();
 		// echo($user[0]["password"]."<br>");
 		// echo($userModel->dekrip($user[0]["password"])."<br>");
 		
-
+// ############################################################################################################
 
 		
 		// Tentang Disposisi ####################################################
@@ -75,6 +81,8 @@ class Home extends BaseController
 		// 		'nomor' => 1
 		// 	]);
 		// }
+
+// ############################################################################################################
 
 		// Tentang Surat  ####################################################
 		$suratModel = new SuratModel();
