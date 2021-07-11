@@ -14,6 +14,11 @@ class Home extends BaseController
 		return view('home/index');
 	}
 
+	public function surat()
+	{
+		return view('surat/index');
+	}
+
 	public function index()
 	{
 
