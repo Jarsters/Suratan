@@ -36,19 +36,20 @@
             </div>
         </nav>
     </header>
-    <div class="row">
+    <div class="row w-100 mt-2" style="margin:auto">
         <img src="\img\Kantor_Wali_Kota_Jakarta_Timur.jpg" class="img-fluid" alt="">
     </div>
     <br><br><br>
-    <div class="row justify-content-md-center">
-        <!-- <div class="col col-lg-2"></div> -->
-        <div class="col col-lg-6">
+    <div class="row justify-content-center w-100">
+        <div class="col col-sm-12 col-lg-6 justify-content-center">
+
             <div class="text-center">
                 <p style="font-family:inter;font-weight:bold;color:#0A5384;font-size:3rem;">Pencarian Surat</p>
             </div>
+
             <form class="form-inline">
-                <div class="row">
-                    <div class="col col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col col-8 col-lg-10 w-80">
                         <div class="input-group">
                             <span class="input-group-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -59,13 +60,13 @@
                             <input type="text" class="form-control" placeholder="Cari Berdasarkan Nomor Surat atau Tanggal" name="keyword">
                         </div>
                     </div>
-                    <div class="col col-lg-2">
+                    <div class="col col-12 col-lg-2 text-center">
                         <button type="submit" class="btn btn-primary mb-2" style="background-color:#0A5384;">CARI</button>
                     </div>
                 </div>
             </form>
+
         </div>
-        <!-- <div class="col col-lg-2"></div> -->
     </div>
 </body>
 </html>
