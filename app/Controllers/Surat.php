@@ -10,11 +10,23 @@ class Surat extends BaseController
 {
 	public function index()
 	{
-        return view('surat/index');
+		if($this->session->has('username')){
+			$data = [
+				'title' => 'Kumpulan Surat'
+			];
+			return view('surat/index', $data);
+		}
+		return redirect()->to(base_url('/login'));
 	}
 
     public function ajukan()
 	{
-		return view('surat/ajukan');
+		if($this->session->has('username')){
+			$data = [
+				'title' => 'Ajukan Surat'
+			];
+			return view('surat/ajukan', $data);
+		}
+		return redirect()->to(base_url('/login'));
 	}
 }

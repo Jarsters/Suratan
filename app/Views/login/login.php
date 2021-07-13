@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Login</title>
 </head>
-<body style="background-image: url('https://www.monkeyjoes.com/images/made/assets/images/stores/laptop-820274_12801_640_427_84.jpg');
+<body style="background-image: url('/img/background_login.jpg');
     background-size: 100% 100%;background-attachment: fixed;">
     <div class="container">
         <div class="row" style="margin: 0 auto 100px;padding: 10px;margin-top: 20%;

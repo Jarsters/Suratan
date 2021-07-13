@@ -3,7 +3,6 @@
 <?= $this->section('content');?>
 
 <div class="row w-100" style="margin:auto; margin-top: 6.5rem">
-    <hr>
     <img src="\img\Kantor_Wali_Kota_Jakarta_Timur.jpg" class="img-fluid" alt="">
 </div>
 <br><br><br>

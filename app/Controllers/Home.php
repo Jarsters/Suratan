@@ -11,10 +11,10 @@ class Home extends BaseController
 
 	public function index()
 	{
-		if($this->session->has('username')){
-			return view('home/index');
-		}
-		return redirect()->to(base_url('/login'));
+		$data = [
+			'title' => 'Home'
+		];
+		return view('home/index', $data);
 	}
 
 	private function catatan()
