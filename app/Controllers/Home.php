@@ -9,20 +9,17 @@ use \App\Models\SuratModel;
 class Home extends BaseController
 {
 
-	public function utama()
-	{
-		return view('home/index');
-	}
-
-	public function surat()
-	{
-		return view('surat/index');
-	}
-
 	public function index()
 	{
+		if($this->session->has('username')){
+			return view('home/index');
+		}
+		return redirect()->to(base_url('/login'));
+	}
 
-// ############################################################################################################
+	private function catatan()
+	{
+	// ############################################################################################################
 		// return view('welcome_message');
 		// echo ("Hello world!");
 
@@ -39,7 +36,9 @@ class Home extends BaseController
 		// Ambil year aja ####################################################
 		// echo(date("Y"));
 
-// ############################################################################################################
+	// ############################################################################################################
+
+		// Tentang USER MODEL ####################################################
 
 		// Enkripsi Dipake di model untuk save user ####################################################
 		// $encrypter = \Config\Services::encrypter();
@@ -69,8 +68,7 @@ class Home extends BaseController
 		// echo($user[0]["password"]."<br>");
 		// echo($userModel->dekrip($user[0]["password"])."<br>");
 		
-// ############################################################################################################
-
+	// ############################################################################################################
 		
 		// Tentang Disposisi ####################################################
 		$disposisiModel = new DisposisiModel();
@@ -133,6 +131,6 @@ class Home extends BaseController
 		// $suratModel->save($dataSurat);
 		d($surat);
 		// $disposisiModel->save(["id" => "1", "nomor" => $dataDisposisi["nomor"] + 1]);
-			
-		}
+	}
+
 }

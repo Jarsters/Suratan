@@ -16,7 +16,7 @@
                 <br><br>
                 <h2 style="color: #0A5384;font-weight: bold;">Login</h2>
                 <br>
-                <form class="form-inline">
+                <form action="/auth/auth" class="form-inline" method="POST">
                     <!-- Bagian Username -->
                     <div class="row">
                         <div class="col col-md-12 col-lg-3">
@@ -37,7 +37,7 @@
                         <div class="col col-md-12 col-lg-9">
                             <div class="input-group">
                                 <!-- Ini namenya keyword -->
-                                <input type="text" class="form-control" placeholder="Password" name="password">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
                             </div>
                         </div>
                     </div>
