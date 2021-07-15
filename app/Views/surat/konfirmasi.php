@@ -19,9 +19,21 @@
                 </tr>
             </thead>
             <tbody>
+                <?php $length = sizeof(explode(',', $surat['kepada'])) ?>
+                <?php for($i = 0; $i < $length; $i++) : ?>
                 <tr>
-                    <td>1</td>
-                    <td>Mark</td>
+                    <td><?= ($surat['no_surat']) ? $surat['no_surat'] : $surat['no_disposisi'] ?></td>
+                    <td><?= explode(',', $surat['tanggal_surat'])[$i] ?></td>
+                    <td><?= explode(',', $surat['kepada'])[$i] ?></td>
+                    <td><?= date('m-d-Y', strtotime($surat['surat_dibuat'])) ?></td>
+                    <td><?= $surat['perihal'] ?></td>
+                    <td><?= $surat['asal_surat'] ?></td>
+                    <td><?= explode(',', $surat['keterangan'])[$i] ?></td>
+                </tr>
+                <?php endfor; ?>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
                     <td style="width: 15%;">
                         <select class="form-select" aria-label="Default select example">
                             <option selected>Pilih</option>
@@ -30,22 +42,6 @@
                             <option value="3">Three</option>
                         </select>
                     </td>
-                    <td>@mdo</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
                     <td>Thornton</td>
                     <td>@fat</td>
                     <td>Thornton</td>

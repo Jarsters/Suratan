@@ -16,7 +16,7 @@
                 <br><br>
                 <h2 style="color: #0A5384;font-weight: bold;">Login</h2>
                 <br>
-                <form action="/auth/auth" class="form-inline" method="POST">
+                <form action="<?= base_url('/auth/auth')?>" class="form-inline" method="POST">
                     <!-- Bagian Username -->
                     <div class="row">
                         <div class="col col-md-12 col-lg-3">

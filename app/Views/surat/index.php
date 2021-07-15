@@ -43,31 +43,18 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($surat as $s) : ?>
+                <?php $length = sizeof(explode(',', $s['tanggal_surat'])) - 1; ?>
                 <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td><a href="surat/lihat/<?= $s['no_disposisi']?>"><?= $s['no_disposisi']?></a></td>
+                <td><?= date('d-m-Y', strtotime($s['surat_dibuat']))?></td>
+                <td><?= explode(',', $s['kepada'])[$length]; ?></td>
+                <td><?= explode(',', $s['tanggal_surat'])[$length]; ?></td>
+                <td><?= $s['perihal']?></td>
+                <td><?= $s['asal_surat']?></td>
+                <td><?= explode(',', $s['keterangan'])[$length]; ?></td>
                 </tr>
-                <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <td>3</td>
-                <td>Larry the Bird</td>
-                <td>@twitter</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

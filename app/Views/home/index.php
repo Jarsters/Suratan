@@ -13,7 +13,7 @@
             <p style="font-family:inter;font-weight:bold;color:#0A5384;font-size:3rem;">Pencarian Surat</p>
         </div>
 
-        <form class="form-inline">
+        <form action="<?= base_url("/surat/search")?>" class="form-inline" method="GET">
             <div class="row justify-content-center">
                 <div class="col col-8 col-lg-10 w-80">
                     <div class="input-group">

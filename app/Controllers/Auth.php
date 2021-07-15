@@ -28,6 +28,7 @@ class Auth extends BaseController
                 return redirect()->to(base_url("/home"));
             }
         }
+        // auth/login disetting dari router
         return redirect()->to('auth/login');
     }
 

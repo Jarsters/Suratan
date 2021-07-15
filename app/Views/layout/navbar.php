@@ -15,8 +15,8 @@
                 <div class="col-10 text-center">
                     <div class="row">
                         <div class="col-1 text-center">
-                            <a class="navbar-brand" href="#">
-                                <img src="\img\1200px-Coat_of_arms_of_Jakarta.svg.png" alt="" width="75px">
+                            <a class="navbar-brand" href="<?= base_url("") ?>">
+                                <img src="\img\1200px-Coat_of_arms_of_Jakarta.svg.png" alt="Logo Jakarta" width="75px">
                             </a>     
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>

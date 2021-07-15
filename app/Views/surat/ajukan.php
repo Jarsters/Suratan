@@ -6,7 +6,7 @@
         <div class="text-center">
             <p style="font-weight:bold;color:#0A5384;font-size:3rem;">Surat Masuk</p>
         </div>
-        <form class="form-inline">
+        <form action="<?= base_url('/surat/simpan_surat')?>" class="form-inline" method="post">
             <!-- Bagian Nomor Disposisi -->
             <div class="row">
                 <div class="col col-12 col-lg-3" style="margin:auto">
@@ -15,7 +15,8 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan nomor disposisi ..." name="no_disposisi">
+                        <input type="text" class="form-control" placeholder="Masukkan nomor disposisi ..." name="no_disposisi"
+                        value="<?= $posisi ?>" readonly>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan tanggal dibuatnya surat ... (ex: 20-01-2020)" name="tanggal_surat">
+                        <input type="text" class="form-control" placeholder="Masukkan tanggal dibuatnya surat ... (ex: 20-01-2020)" name="surat_dibuat">
                     </div>
                 </div>
             </div>
