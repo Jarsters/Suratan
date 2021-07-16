@@ -9,7 +9,7 @@
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col" class="col col-2">Nomor Disposisi</th>
+                    <th scope="col" class="col col-2"><?= ($surat['no_surat']) ? 'Nomor Surat' : 'Nomor Disposisi' ?></th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Lokasi</th>
                     <th scope="col" class="col col-2">Tanggal Surat</th>

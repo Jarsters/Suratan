@@ -28,17 +28,11 @@ class Auth extends BaseController
                 return redirect()->to(base_url("/home"));
             }
         }
-        // auth/login disetting dari router
         return redirect()->to('auth/login');
     }
 
     public function index()
     {
-        // $userModel = new userModel();
-        // d($userModel->findAll());
-        // $user = $userModel->where(['id_karyawan'=>'3123123141569'])->first();
-        // echo($userModel->dekrip($user['password']));
-        // d($this->session->get());
         return view('login/login');
     }
 }

@@ -17,7 +17,7 @@ class Home extends BaseController
 		return view('home/index', $data);
 	}
 
-	private function catatan()
+	public function catatan()
 	{
 	// ############################################################################################################
 		// return view('welcome_message');
@@ -48,13 +48,14 @@ class Home extends BaseController
 
 		// User model meng-enkrip password dan dekrip
 		$userModel = new UserModel();
-		// $dataUser = [
-		// 	'jabatan' => "direktur utama",
-		// 	'password' => $userModel->enkrip('inipasswordku2'),
-		// 	"id_karyawan" => "3123123141569"
-		// ];
-		// $userModel->save($dataUser);
-		$user = $userModel->where(["id_karyawan" => "3123123141569"])->first();
+		$dataUser = [
+			'id' => 11,
+			'jabatan' => "Pemilik Perusahaan",
+			'password' => $userModel->enkrip('akucintadia'),
+			"id_karyawan" => "1313618290"
+		];
+		$userModel->save($dataUser);
+		// $user = $userModel->where(["id_karyawan" => "3123123141569"])->first();
 		// $dataUser = [
 		// 	'id' => $user['id'],
 		// 	'jabatan' => "direktur utama",

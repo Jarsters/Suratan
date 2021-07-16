@@ -6,8 +6,15 @@
     <img src="\img\Kantor_Wali_Kota_Jakarta_Timur.jpg" class="img-fluid" alt="">
 </div>
 <br><br><br>
+<div class="container">
+    <?php if(session()->getFlashData('pesan_no_disposisi')): ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashData('pesan_no_disposisi'); ?>
+        </div>
+    <?php endif; ?>
+</div>
 <div class="row justify-content-center w-100">
-    <div class="col col-sm-12 col-lg-6 justify-content-center">
+    <div class="col col-12 col-lg-6">
 
         <div class="text-center">
             <p style="font-family:inter;font-weight:bold;color:#0A5384;font-size:3rem;">Pencarian Surat</p>
