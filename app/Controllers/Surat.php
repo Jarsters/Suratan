@@ -96,13 +96,13 @@ class Surat extends BaseController
 		$update = [
 			'id' => $data['id'],
 			'no_disposisi' => $surat['no_disposisi'],
-            'no_surat' => isset($data['no_surat']) ? $data['no_surat'] : null,
+            'no_surat' => $surat['no_surat'],
             'perihal' => $surat['perihal'],
             'asal_surat' => $surat['asal_surat'],
             'surat_dibuat' => $surat['surat_dibuat'],
             'keterangan' => $surat['keterangan'].','.$data['keterangan'],
-            'kepada' => $surat['kepada'].','.$data['keterangan'],
-            'tanggal_surat' => $surat['tanggal_surat'].','.$data['tanggal_surat'],
+            'kepada' => $surat['kepada'].','.$data['kepada'],
+            'tanggal_surat' => $surat['tanggal_surat'].','.date('d-m-Y H:i:s'),
             'status' => ($data['keterangan'] == 'selesai') ? '1' : '0',
             'tahun' => $surat['tahun']
 		];

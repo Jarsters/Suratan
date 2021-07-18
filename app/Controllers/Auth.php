@@ -17,12 +17,13 @@ class Auth extends BaseController
     {
         $data = $this->request->getVar();
         $userModel = new userModel();
-        $user = $userModel->where(['id_karyawan'=>$data['username']])->first();
+        $user = $userModel->where(['jabatan'=>$data['username']])->first();
         if($user){
             $pass = $userModel->dekrip($user['password']);
             if($pass == $data['password']){
                 $array = [
                     'username' => $data['username'],
+                    'jabatan'  => $data['username']
                 ];
                 $this->session->set($array);
                 return redirect()->to(base_url("/home"));

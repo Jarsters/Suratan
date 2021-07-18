@@ -41,11 +41,14 @@
             </tbody>
         </table>
 
+        <?php if(session('jabatan') == explode(',', $surat['kepada'])[$length - 1]) : ?>
         <!-- form tujuan -->
         <div class="row justify-content-center w-100" style="margin-top: 6.5rem">
             <div class="col col-lg-6">
                 <h2 class="text-center mb-4" style="color:#0A5384;">Silahkan Konfirmasi</h2>
-                <form action="" class="form-inline" method="post">
+                <form action="<?= base_url('/surat/update') ; ?>" class="form-inline" method="POST">
+                <?= csrf_field(); ?>
+                    <input type="hidden" value="<?= $surat['id'] ?>" name="id">
                     <!-- Bagian Lokasi Surat -->
                     <div class="row">
                         <div class="col col-12 col-lg-3">
@@ -54,7 +57,7 @@
                         <div class="col col-12 col-lg-9">
                             <div class="input-group">
                                 <!-- Ini namenya keyword -->
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" name="kepada">
                                     <option selected>Pilih</option>
                                     <option value="Tata Usaha">Tata Usaha</option>
                                     <option value="Seksi 1">Seksi 1</option>
@@ -74,7 +77,7 @@
                         <div class="col col-12 col-lg-9">
                             <div class="input-group">
                                 <!-- Ini namenya keyword -->
-                                <input type="text" class="form-control" placeholder="Masukkan asal surat ..." name="asal_surat">
+                                <input type="text" class="form-control" placeholder="Masukkan asal surat ..." name="keterangan">
                             </div>
                         </div>
                     </div>
@@ -86,6 +89,7 @@
                 </form>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 </div>
 

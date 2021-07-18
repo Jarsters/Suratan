@@ -33,7 +33,7 @@
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col" class="col col-2"><?= ($surat['no_surat']) ? 'Nomor Surat' : 'Nomor Disposisi' ?></th>
+                    <th scope="col" class="col col-2">Nomor Disposisi</th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Lokasi</th>
                     <th scope="col">Nomor Surat</th>
@@ -48,11 +48,11 @@
                     <?php $length = sizeof(explode(',', $s['tanggal_surat'])) - 1; ?>
                     <tr>
                         <td><a href="surat/lihat/<?= $s['no_disposisi'] ?>"><?= $s['no_disposisi'] ?></a></td>
-                        <td><?= date('d-m-Y', strtotime($s['surat_dibuat'])) ?></td>
-                        <td><?= explode(',', $s['kepada'])[$length]; ?></td>
-                        <!-- tambahin buat nomor surat sa -->
-                        <td><?= $s['perihal'] ?></td>
                         <td><?= explode(',', $s['tanggal_surat'])[$length]; ?></td>
+                        <td><?= explode(',', $s['kepada'])[$length]; ?></td>
+                        <td><?= $s['no_surat'] ?></td>
+                        <td><?= $s['perihal'] ?></td>
+                        <td><?= date('d-m-Y', strtotime($s['surat_dibuat'])) ?></td>
                         <td><?= $s['asal_surat'] ?></td>
                         <td><?= explode(',', $s['keterangan'])[$length]; ?></td>
                     </tr>
