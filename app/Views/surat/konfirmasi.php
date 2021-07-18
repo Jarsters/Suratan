@@ -9,7 +9,6 @@
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col" class="col col-2"><?= ($surat['no_surat']) ? 'Nomor Surat' : 'Nomor Disposisi' ?></th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Lokasi</th>
                     <th scope="col">Nomor Surat</th>
@@ -23,32 +22,22 @@
                 <?php $length = sizeof(explode(',', $surat['kepada'])) ?>
                 <?php for ($i = 0; $i < $length; $i++) : ?>
                     <tr>
-                        <td><?= ($surat['no_surat']) ? $surat['no_surat'] : $surat['no_disposisi'] ?></td>
-                        <td><?= explode(',', $surat['tanggal_surat'])[$i] ?></td>
-                        <!-- tambahin buat nomor surat sa -->
+                        <!-- Tanggal (Dinamis) -->
+                        <td><?= explode(',', $surat['tanggal_surat'])[$i] ?></td> 
+                        <!-- Lokasi -->
+                        <td><?= explode(',', $surat['kepada'])[$i] ?></td>
+                        <!-- Nomor Surat -->
+                        <td><?= $surat['no_surat'] ?></td>
+                        <!-- Perihal -->
                         <td><?= $surat['perihal'] ?></td>
+                        <!-- Tanggal Surat -->
                         <td><?= date('m-d-Y', strtotime($surat['surat_dibuat'])) ?></td>
+                        <!-- Asal Surat -->
                         <td><?= $surat['asal_surat'] ?></td>
+                        <!-- Keterangan -->
                         <td><?= explode(',', $surat['keterangan'])[$i] ?></td>
                     </tr>
                 <?php endfor; ?>
-                <tr>
-                    <td>3</td>
-                    <td>12/12/1212</td>
-                    <td style="width: 15%;">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </td>
-                    <td>123/213/123/1</td>
-                    <td>coba perihal nya panjang banget</td>
-                    <td>@fat</td>
-                    <td>SDN 011 Pagi duren sawit</td>
-                    <td><input type="text" class="form-control" placeholder="Masukkan keterangan ..." name="keterangan"></td>
-                </tr>
             </tbody>
         </table>
         <div class="col col-12 text-center" style="margin-top: 5%">
