@@ -27,8 +27,19 @@ class Surat extends BaseController
 			$suratModel = new SuratModel();
 			$data = [
 				'title' => 'Ajukan Surat',
-				'posisi' => sizeof($suratModel->findAll()) + 1
 			];
+
+			// Akan mereset menjadi 1 jika tahun baru
+			$disposisiModel = new DisposisiModel();
+			$dataDisposisi = $disposisiModel->where("id", "1")->first();
+			$surat = $suratModel->where(['tahun'=>date("Y")])->first();
+			if(!$surat){
+				$disposisiModel->save([
+					'id' => 1,
+					'nomor' => 1
+				]);
+			}
+			$data['posisi'] = $dataDisposisi['nomor'];
 			return view('surat/ajukan', $data);
 		}
 		return redirect()->to(base_url('/login'));
@@ -36,6 +47,12 @@ class Surat extends BaseController
 
 	public function simpan_surat()
 	{
+		$disposisiModel = new DisposisiModel();
+		$dataDisposisi = $disposisiModel->where("id", "1")->first();
+		$disposisiModel->save([
+			'id' => 1,
+			'nomor' => $dataDisposisi['nomor'] + 1
+		]);
 		$suratModel = new SuratModel();
 		$suratModel->simpan($this->request->getVar());
 		return redirect()->to(base_url(''));
