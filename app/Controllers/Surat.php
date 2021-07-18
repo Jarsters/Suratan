@@ -70,11 +70,26 @@ class Surat extends BaseController
 		return view('surat/konfirmasi', $data);
 	}
 
-	public function update_manual()
+	public function update()
 	{
 		date_default_timezone_set('Asia/Jakarta');
 		$suratModel = new SuratModel();
-		$surat = $suratModel->where(['id' => 15])->first();
-		echo(date('d-m-Y', strtotime("2021-02-13")));
+		$data = $this->request->getVar();
+		$surat = $suratModel->where(['id' => $data['id']])->first();
+		$update = [
+			'id' => $data['id'],
+			'no_disposisi' => $surat['no_disposisi'],
+            'no_surat' => isset($data['no_surat']) ? $data['no_surat'] : null,
+            'perihal' => $surat['perihal'],
+            'asal_surat' => $surat['asal_surat'],
+            'surat_dibuat' => $surat['surat_dibuat'],
+            'keterangan' => $surat['keterangan'].','.$data['keterangan'],
+            'kepada' => $surat['kepada'].','.$data['keterangan'],
+            'tanggal_surat' => $surat['tanggal_surat'].','.$data['tanggal_surat'],
+            'status' => ($data['keterangan'] == 'selesai') ? '1' : '0',
+            'tahun' => $surat['tahun']
+		];
+		$suratModel->save($update);
+		return redirect()->to(base_url('/surat'));
 	}
 }
