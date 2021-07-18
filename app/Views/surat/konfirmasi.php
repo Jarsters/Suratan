@@ -9,7 +9,6 @@
         <table class="table" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col" class="col col-2"><?= ($surat['no_surat']) ? 'Nomor Surat' : 'Nomor Disposisi' ?></th>
                     <th scope="col">Tanggal</th>
                     <th scope="col">Lokasi Surat</th>
                     <th scope="col">Nomor Surat</th>
@@ -23,12 +22,19 @@
                 <?php $length = sizeof(explode(',', $surat['kepada'])) ?>
                 <?php for ($i = 0; $i < $length; $i++) : ?>
                     <tr>
-                        <td><?= ($surat['no_surat']) ? $surat['no_surat'] : $surat['no_disposisi'] ?></td>
+                        <!-- Tanggal (Dinamis) -->
                         <td><?= explode(',', $surat['tanggal_surat'])[$i] ?></td>
-                        <td><?= explode(',', $s['kepada'])[$length]; ?></td>
+                        <!-- Lokasi -->
+                        <td><?= explode(',', $surat['kepada'])[$i] ?></td>
+                        <!-- Nomor Surat -->
+                        <td><?= $surat['no_surat'] ?></td>
+                        <!-- Perihal -->
                         <td><?= $surat['perihal'] ?></td>
+                        <!-- Tanggal Surat -->
                         <td><?= date('m-d-Y', strtotime($surat['surat_dibuat'])) ?></td>
+                        <!-- Asal Surat -->
                         <td><?= $surat['asal_surat'] ?></td>
+                        <!-- Keterangan -->
                         <td><?= explode(',', $surat['keterangan'])[$i] ?></td>
                     </tr>
                 <?php endfor; ?>
