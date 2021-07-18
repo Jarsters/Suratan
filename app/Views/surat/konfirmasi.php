@@ -11,7 +11,7 @@
                 <tr>
                     <th scope="col" class="col col-2"><?= ($surat['no_surat']) ? 'Nomor Surat' : 'Nomor Disposisi' ?></th>
                     <th scope="col">Tanggal</th>
-                    <th scope="col">Lokasi</th>
+                    <th scope="col">Lokasi Surat</th>
                     <th scope="col">Nomor Surat</th>
                     <th scope="col">Perihal</th>
                     <th scope="col" class="col col-2">Tanggal Surat</th>
@@ -25,34 +25,60 @@
                     <tr>
                         <td><?= ($surat['no_surat']) ? $surat['no_surat'] : $surat['no_disposisi'] ?></td>
                         <td><?= explode(',', $surat['tanggal_surat'])[$i] ?></td>
-                        <!-- tambahin buat nomor surat sa -->
+                        <td><?= explode(',', $s['kepada'])[$length]; ?></td>
                         <td><?= $surat['perihal'] ?></td>
                         <td><?= date('m-d-Y', strtotime($surat['surat_dibuat'])) ?></td>
                         <td><?= $surat['asal_surat'] ?></td>
                         <td><?= explode(',', $surat['keterangan'])[$i] ?></td>
                     </tr>
                 <?php endfor; ?>
-                <tr>
-                    <td>3</td>
-                    <td>12/12/1212</td>
-                    <td style="width: 15%;">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </td>
-                    <td>123/213/123/1</td>
-                    <td>coba perihal nya panjang banget</td>
-                    <td>@fat</td>
-                    <td>SDN 011 Pagi duren sawit</td>
-                    <td><input type="text" class="form-control" placeholder="Masukkan keterangan ..." name="keterangan"></td>
-                </tr>
             </tbody>
         </table>
-        <div class="col col-12 text-center" style="margin-top: 5%">
-            <button type="submit" class="btn btn-primary mb-2" style="background-color:#0A5384;">KONFIRMASI</button>
+
+        <!-- form tujuan -->
+        <div class="row justify-content-center w-100" style="margin-top: 6.5rem">
+            <div class="col col-lg-6">
+                <h2 class="text-center mb-4" style="color:#0A5384;">Silahkan Konfirmasi</h2>
+                <form action="" class="form-inline" method="post">
+                    <!-- Bagian Lokasi Surat -->
+                    <div class="row">
+                        <div class="col col-12 col-lg-3">
+                            <p class="pt-1" style="font-weight:bold;">Lokasi Surat</p>
+                        </div>
+                        <div class="col col-12 col-lg-9">
+                            <div class="input-group">
+                                <!-- Ini namenya keyword -->
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih</option>
+                                    <option value="Tata Usaha">Tata Usaha</option>
+                                    <option value="Seksi 1">Seksi 1</option>
+                                    <option value="Seksi 2">Seksi 2</option>
+                                    <option value="Seksi 3">Seksi 3</option>
+                                    <option value="Seksi 4">Seksi 4</option>
+                                    <option value="Seksi 5">Seksi 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bagian Keterangan -->
+                    <div class="row">
+                        <div class="col col-12 col-lg-3">
+                            <p class="pt-1" style="font-weight:bold;">Keterangan</p>
+                        </div>
+                        <div class="col col-12 col-lg-9">
+                            <div class="input-group">
+                                <!-- Ini namenya keyword -->
+                                <input type="text" class="form-control" placeholder="Masukkan asal surat ..." name="asal_surat">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bagian Button -->
+                    <div class="col text-center" style="padding-top: 5%;">
+                        <button type="submit" class="btn btn-primary mb-2" style="background-color:#0A5384;">KONFIRMASI</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
