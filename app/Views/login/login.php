@@ -19,6 +19,7 @@
                 <h2 style="color: #0A5384;font-weight: bold;">Login</h2>
                 <br>
                 <form action="<?= base_url('/auth') ?>" class="form-inline" method="POST">
+                <?= csrf_field(); ?>
                     <!-- Bagian Username -->
                     <div class="row">
                         <div class="col col-md-12 col-lg-3">
@@ -27,7 +28,7 @@
                         <div class="col col-md-12 col-lg-9">
                             <div class="input-group">
                                 <!-- Ini namenya keyword -->
-                                <input type="text" class="form-control" placeholder="Username" name="username">
+                                <input type="text" class="form-control" placeholder="Username" name="username" autofocus>
                             </div>
                         </div>
                     </div>

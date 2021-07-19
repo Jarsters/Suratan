@@ -28,10 +28,10 @@
                                 <ul class="nav justify-content-end">
                                     <?php if(session('username')) : ?>
                                     <li class="nav-item active" style="padding-top: 1.5rem;">
-                                        <a href="/surat/ajukan" class="nav-link" style="color:#0A5384"><h6 style="<?= ($title == 'Ajukan Surat') ? 'font-weight: bolder' : '' ?>">Ajukan Surat</h6></a>
+                                        <a href="<?= base_url('/ajukan'); ?>" class="nav-link" style="color:#0A5384"><h6 style="<?= ($title == 'Ajukan Surat') ? 'font-weight: bolder' : '' ?>">Ajukan Surat</h6></a>
                                     </li>
                                     <li class="nav-item" style="padding-top: 1.5rem;">
-                                        <a href="/surat" class="nav-link" style="color:#0A5384"><h6 style="<?= ($title == 'Kumpulan Surat') ? 'font-weight: bolder' : '' ?>">Kumpulan Surat</h6></a>
+                                        <a href="<?= base_url('/surat'); ?>" class="nav-link" style="color:#0A5384"><h6 style="<?= ($title == 'Kumpulan Surat') ? 'font-weight: bolder' : '' ?>">Kumpulan Surat</h6></a>
                                     </li>
 
                                     <!-- Bagian login ini seharusnya ga diperluin, dia butuhnya logout doang -->

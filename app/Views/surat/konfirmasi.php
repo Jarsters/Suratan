@@ -57,7 +57,7 @@
                         <div class="col col-12 col-lg-9">
                             <div class="input-group">
                                 <!-- Ini namenya keyword -->
-                                <select class="form-select" aria-label="Default select example" name="kepada">
+                                <select class="form-select" aria-label="Default select example" name="kepada" autofocus>
                                     <option selected>Pilih</option>
                                     <option value="Tata Usaha">Tata Usaha</option>
                                     <option value="Seksi 1">Seksi 1</option>

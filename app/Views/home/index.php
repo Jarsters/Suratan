@@ -21,6 +21,7 @@
         </div>
 
         <form action="<?= base_url("/surat/search")?>" class="form-inline" method="GET">
+        <?= csrf_field(); ?>
             <div class="row justify-content-center">
                 <div class="col col-8 col-lg-10 w-80">
                     <div class="input-group">

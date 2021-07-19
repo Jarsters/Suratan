@@ -7,6 +7,7 @@
             <p style="font-weight:bold;color:#0A5384;font-size:3rem;">Surat Masuk</p>
         </div>
         <form action="<?= base_url('/surat/simpan_surat') ?>" class="form-inline" method="post">
+        <?= csrf_field(); ?>
             <!-- Bagian Nomor Disposisi -->
             <div class="row">
                 <div class="col col-12 col-lg-3" style="margin:auto">
@@ -27,7 +28,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan nomor surat ..." name="nomor_surat">
+                        <input type="text" class="form-control" placeholder="Masukkan nomor surat ..." name="nomor_surat" autofocus>
                     </div>
                 </div>
             </div>
