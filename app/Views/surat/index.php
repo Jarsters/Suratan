@@ -47,7 +47,7 @@
                 <?php foreach ($surat as $s) : ?>
                     <?php $length = sizeof(explode(',', $s['tanggal_surat'])) - 1; ?>
                     <tr>
-                        <td><a href="surat/lihat/<?= $s['no_disposisi'] ?>"><?= $s['no_disposisi'] ?></a></td>
+                        <td><a href="lihat/<?= $s['no_disposisi'] ?>"><?= $s['no_disposisi'] ?></a></td>
                         <td><?= explode(',', $s['tanggal_surat'])[$length]; ?></td>
                         <td><?= explode(',', $s['kepada'])[$length]; ?></td>
                         <td><?= $s['no_surat'] ?></td>

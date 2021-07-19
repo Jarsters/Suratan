@@ -33,8 +33,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->post('/auth', 'Auth::auth');
 $routes->get('/login', "Auth::index");
 $routes->get('/logout', "Auth::logout");
+$routes->get('/lihat/(:num)', "Surat::lihat/$1");
 
 /*
  * --------------------------------------------------------------------
