@@ -7,7 +7,7 @@
             <p style="font-weight:bold;color:#0A5384;font-size:3rem;">Surat Masuk</p>
         </div>
         <form action="<?= base_url('/surat/simpan_surat') ?>" class="form-inline" method="post">
-        <?= csrf_field(); ?>
+            <?= csrf_field(); ?>
             <!-- Bagian Nomor Disposisi -->
             <div class="row">
                 <div class="col col-12 col-lg-3" style="margin:auto">
@@ -28,7 +28,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan nomor surat ..." name="nomor_surat" autofocus>
+                        <input type="text" class="form-control" placeholder="Masukkan nomor surat ..." name="no_surat" autofocus required>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan perihal ..." name="perihal">
+                        <input type="text" class="form-control" placeholder="Masukkan perihal ..." name="perihal" required>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan tanggal dibuatnya surat ... (ex: 20-01-2020)" name="surat_dibuat">
+                        <input type="date" class="form-control" placeholder="Masukkan tanggal dibuatnya surat ... (ex: 20-01-2020)" name="surat_dibuat" required>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="col col-12 col-lg-9">
                     <div class="input-group">
                         <!-- Ini namenya keyword -->
-                        <input type="text" class="form-control" placeholder="Masukkan asal surat ..." name="asal_surat">
+                        <input type="text" class="form-control" placeholder="Masukkan asal surat ..." name="asal_surat" required>
                     </div>
                 </div>
             </div>
